@@ -1,0 +1,808 @@
+<!-- Hey Ralf! -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday!</title>
+    <link rel="shortcut icon" href="https://cdn.discordapp.com/attachments/1109308692261773353/1126310837406154793/tinycake.png" type="image/x-icon">
+    <link href="https://fonts.cdnfonts.com/css/yahfie" rel="stylesheet">
+                
+    <!-- <link rel="stylesheet" href="style.css" /> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <style>
+        :root {
+    --color1: rgb(0, 231, 255);
+    --color2: rgb(255, 0, 231);
+    --eevee1: #efb2fb;
+    --eevee2: #acc6f8;
+  }
+
+  @import url('https://fonts.cdnfonts.com/css/yahfie');
+
+  
+  /* @font-face {
+    font-family: "yahfie";
+    src: url('https://fonts.cdnfonts.com/css/yahfie');
+} */
+
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    min-width: 1500px;
+}
+
+body {
+    font-family: 'Yahfie';
+    height: 100%;
+    background: #54a29e;
+    font-weight: 600;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    color: black;
+}
+
+.forward-arrow{
+  right: 0;
+}
+.forward-arrow, .back-arrow{
+  border-radius: 50%;
+  background: url('https://cdn.discordapp.com/attachments/1109308692261773353/1126310707198181406/cutebuttonpeach.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  height: 200px;
+  width: 200px;
+  position: absolute;
+  top: 35%;
+}
+
+.forward-arrow:hover, .back-arrow:hover{
+  z-index: 100;
+  filter: hue-rotate(-30deg);
+  cursor: pointer;
+  box-shadow:
+  2.8px 2.8px 2.2px rgba(0, 0, 0, 0.02),
+  6.7px 6.7px 5.3px rgba(0, 0, 0, 0.028),
+  12.5px 12.5px 10px rgba(0, 0, 0, 0.035),
+  22.3px 22.3px 17.9px rgba(0, 0, 0, 0.042),
+  41.8px 41.8px 33.4px rgba(0, 0, 0, 0.05),
+  100px 100px 80px rgba(0, 0, 0, 0.07)
+;
+}
+
+.back-arrow{
+  display: none;
+  transform: rotate(180deg);
+  left: 0;
+}
+
+audio {
+    width: 100%;
+    height: 20px;
+    position: fixed;
+    z-index: 50;
+    top: 0;
+}
+
+.app {
+  display: none;
+    background-color: #f2c8b7;
+    background: url('https://media.discordapp.net/attachments/1109308692261773353/1126310707474989206/diary.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    height: 900px;
+    width: 1300px;
+    margin: auto;
+    margin-top: 20px;
+    position: relative;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow:
+  2.8px 2.8px 2.2px rgba(0, 0, 0, 0.02),
+  6.7px 6.7px 5.3px rgba(0, 0, 0, 0.028),
+  12.5px 12.5px 10px rgba(0, 0, 0, 0.035),
+  22.3px 22.3px 17.9px rgba(0, 0, 0, 0.042),
+  41.8px 41.8px 33.4px rgba(0, 0, 0, 0.05),
+  100px 100px 80px rgba(0, 0, 0, 0.07)
+;
+}
+
+.heading {
+    background: url('https://media.discordapp.net/attachments/1109308692261773353/1126310777071095838/StickyPaper.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 130px;
+    width: 500px;
+    
+    position: absolute;
+    top: 60px;
+    left: 130px;
+}
+
+.heading h1 {
+    padding-top: 25px;
+    text-align: center;
+    letter-spacing: 2px;
+    color: #202020;
+}
+
+.subheading {
+    background: url('https://media.discordapp.net/attachments/1109308692261773353/1126310776215457832/SmallPaper.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 100px;
+    width: 300px;
+    
+    position: absolute;
+    top: 190px;
+    left: 220px;
+}
+.subheading h2{
+    padding-top: 20px;
+    padding-left: 45px;
+    text-align: left;
+    letter-spacing: 2px;
+    font-size: 1.8rem;
+    color: #202020;
+}
+
+.page {
+    display: flex;
+    flex-wrap: nowrap;
+    height: 100%;
+    width: 100% ;
+}
+
+.left-page{
+    width: 50%;
+    height: 100%;
+    /* border: 1px red solid; */
+}
+
+.left-page-alt{
+    width: 50%;
+    padding-left: 70px;
+    height: 100%;
+    /* border: 1px blue solid; */
+    padding-top: 60px;
+    position: relative;
+}
+.right-page{
+    position: relative;
+    width: 50%;
+    height: 100%;
+    /* border: 1px blue solid; */
+    padding-top: 60px;
+}
+.right-page h1 {
+    font-size: 1.7rem;
+    text-align: left;
+    padding-left: 20px;
+}
+.left-page-alt h1 {
+    font-size: 1.7rem;
+    text-align: left;
+    padding-left: 20px;
+}
+
+.rightOfCard{
+    position: absolute;
+    right: 55px;
+    top: 180px;
+    width: 280px;
+    font-size: 1.7rem;
+    line-height: 3rem;
+    letter-spacing: 1.5px;
+    text-align: center;
+}
+.left-page-alt .rightOfCard{
+    right: 35px;
+}
+.bottomParagraph {
+    position: absolute;
+    bottom: 100px;
+    left: -30px;
+    width: 600px;
+    font-size: 1.7rem;
+    line-height: 2.5rem;
+    letter-spacing: 1.5px;
+    text-align: center;
+}
+#first .bottomParagraph{
+    left: 0px;
+}
+#second .left-page-alt .bottomParagraph{
+    letter-spacing: 1px;
+    line-height: 3rem;
+    width: 570px;
+    left: 70px;
+}
+#second .left-page-alt .rightOfCard{
+    letter-spacing: 2px;
+    line-height: 2.7rem;
+    right: 55px;
+    top: 130px;
+}
+#second .right-page .rightOfCard{
+    letter-spacing: 1px;
+    line-height: 2.7rem;
+    top: 130px;
+    font-size: 1.5rem;
+}
+#second .right-page .bottomParagraph{
+    letter-spacing: 1px;
+    line-height: 3rem;
+    /* font-size: 1.5rem; */
+    width: 570px;
+    /* left: -20px; */
+    /* bottom: 80px; */
+}
+.left-page-alt .bottomParagraph {
+    left: 50px;
+}
+
+  .card {
+    /* width: 90px;
+  height: 150px; */
+  --color1: #ec9bb6;
+    --color2: #ccac6f;
+    --color3: #69e4a5;
+    --color4: #8ec5d6;
+    --color5: #b98cce;
+    width: 280px;
+    height: 500px;
+    position: relative;
+    overflow: hidden;
+    margin: 0px;
+    overflow: hidden;
+    z-index: 10;
+    touch-action: none;
+    border-radius: 5% / 3.5%;
+    box-shadow: -5px -5px 5px -5px var(--color1), 5px 5px 5px -5px var(--color2), -7px -7px 10px -5px transparent, 7px 7px 10px -5px transparent, 0 0 5px 0px rgba(255, 255, 255, 0), 0 25px 35px -20px rgba(0, 0, 0, 0.5);
+    transition: transform 0.5s ease, box-shadow 0.2s ease;
+    will-change: transform, filter;
+    background-color: #040712;
+    background-image: var(--front);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    transform-origin: center; 
+    border: 4px solid var(--border);
+  }
+
+  .cross .card {
+    width: 90px;
+  height: 160px;
+  }
+    
+    /* @media screen and (min-width: 600px) {
+      .card {
+        width: clamp(12.9%, 61%, 18%);
+        height: clamp(18%, 85%, 25.2%); } } */
+  
+  .card:hover {
+    box-shadow: -20px -20px 30px -25px var(--color1), 20px 20px 30px -25px var(--color2), -7px -7px 10px -5px var(--color1), 7px 7px 10px -5px var(--color2), 0 0 13px 4px rgba(255, 255, 255, 0.3), 0 25px 35px -20px rgba(0, 0, 0, 0.5); }
+  
+  .card.eightOfWands {
+    --front: url('https://cdn.discordapp.com/attachments/442693927615594496/1126163337592451133/01._Der_Tod.jpg'); 
+    position: absolute;
+    left: 20px;
+    top: 0px;
+}
+.left-page-alt .card{
+left: 10px;
+}
+  .card.pageOfCups {
+    --front: url('https://cdn.discordapp.com/attachments/442693927615594496/1126163337961545728/02._Bube_Wurst.jpg'); 
+    position: absolute;
+    left: -10px;
+    top: 0px;
+}
+  .card.tower {
+    --front: url('https://cdn.discordapp.com/attachments/442693927615594496/1126163338418728960/03._9_Napf.jpg'); 
+    position: absolute;
+    left: -10px;
+    top: 0px;
+}
+  
+  .card.twoOfWands {
+    --front: url('https://cdn.discordapp.com/attachments/442693927615594496/1126163340088061994/06._2_Knochen.jpg'); 
+    position: absolute;
+    left: -10px;
+    top: 0px;
+}
+  
+  .card.queenOfPent {
+    --front: url('https://cdn.discordapp.com/attachments/442693927615594496/1126163339224031312/04._Die_Herrscherin.jpg'); 
+    position: absolute;
+    left: -10px;
+    top: 0px;
+}
+  .card.temperance {
+    --front: url('https://cdn.discordapp.com/attachments/442693927615594496/1126163339723145297/05._Bube_Napf.jpg'); 
+    position: absolute;
+    left: -10px;
+    top: 0px;
+}
+  .card.sixOfPent {
+    --front: url('https://cdn.discordapp.com/attachments/442693927615594496/1126163340415205436/07._Ass_Wurst.jpg'); 
+    position: absolute;
+    left: -10px;
+    top: 0px;
+}
+  .card.wheelOfFortune {
+    --front: url('https://cdn.discordapp.com/attachments/442693927615594496/1126163340788510821/07._Der_Magier.jpg'); 
+    position: absolute;
+    left: -10px;
+    top: 0px;
+}
+  .card.queenOfSwords {
+    --front: url('https://cdn.discordapp.com/attachments/442693927615594496/1126163341379903649/09._Konigin_Knochen.jpg'); 
+    position: absolute;
+    left: -10px;
+    top: 0px;
+}
+  .card.twoOfPent {
+    --front: url('https://cdn.discordapp.com/attachments/442693927615594496/1126163341849657515/10._10_Stock.jpg'); 
+    position: absolute;
+    left: -10px;
+    top: 0px;
+}
+  
+  .card.pika {
+    --color1: var(--pika1);
+    --color2: var(--pika2);
+    --front: var(--pikafront); }
+  
+  .card.mewtwo {
+    --color1: var(--mewtwo1);
+    --color2: var(--mewtwo2);
+    --front: var(--mewtwofront); }
+  
+  .card.eevee {
+    --color1: #ec9bb6;
+    --color2: #ccac6f;
+    --color3: #69e4a5;
+    --color4: #8ec5d6;
+    --color5: #b98cce;
+    --front: var(--eeveefront); }
+  
+  .card:before,
+  .card:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background-repeat: no-repeat;
+    opacity: .5;
+    mix-blend-mode: color-dodge;
+    transition: all .33s ease; }
+  
+  .card:before {
+    background-position: 50% 50%;
+    background-size: 300% 300%;
+    background-image: linear-gradient(115deg, transparent 0%, var(--color1) 25%, transparent 47%, transparent 53%, var(--color2) 75%, transparent 100%);
+    opacity: .5;
+    filter: brightness(0.5) contrast(1);
+    z-index: 1; }
+  
+  .card:after {
+    opacity: 1;
+    background-image: url("https://cdn.discordapp.com/attachments/1109308692261773353/1126310776525815889/sparkles.gif"), url('https://cdn.discordapp.com/attachments/1109308692261773353/1126310707831517225/holo.webp'), linear-gradient(125deg, #ff008450 15%, #fca40040 30%, #ffff0030 40%, #00ff8a20 60%, #00cfff40 70%, #cc4cfa50 85%);
+    background-position: 50% 50%;
+    background-size: 160%;
+    background-blend-mode: overlay;
+    z-index: 2;
+    filter: brightness(1) contrast(1);
+    transition: all .33s ease;
+    mix-blend-mode: color-dodge;
+    opacity: .75; }
+  
+  .card.active:after,
+  .card:hover:after {
+    filter: brightness(1) contrast(1);
+    opacity: 1; }
+  
+  .card.active,
+  .card:hover {
+    animation: none;
+    transition: box-shadow 0.1s ease-out; }
+  
+  .card.active:before,
+  .card:hover:before {
+    animation: none;
+    background-image: linear-gradient(110deg, transparent 25%, var(--color1) 48%, var(--color2) 52%, transparent 75%);
+    background-position: 50% 50%;
+    background-size: 250% 250%;
+    opacity: .88;
+    filter: brightness(0.66) contrast(1.33);
+    transition: none; }
+  
+  .card.active:before,
+  .card:hover:before,
+  .card.active:after,
+  .card:hover:after {
+    animation: none;
+    transition: none; }
+  
+  .card.animated {
+    transition: none;
+    animation: holoCard 12s ease 0s 1; }
+    .card.animated:before {
+      transition: none;
+      animation: holoGradient 12s ease 0s 1; }
+    .card.animated:after {
+      transition: none;
+      animation: holoSparkle 12s ease 0s 1; }
+  
+  @keyframes holoSparkle {
+    0%, 100% {
+      opacity: .75;
+      background-position: 50% 50%;
+      filter: brightness(1.2) contrast(1.25); }
+    5%, 8% {
+      opacity: 1;
+      background-position: 40% 40%;
+      filter: brightness(0.8) contrast(1.2); }
+    13%, 16% {
+      opacity: .5;
+      background-position: 50% 50%;
+      filter: brightness(1.2) contrast(0.8); }
+    35%, 38% {
+      opacity: 1;
+      background-position: 60% 60%;
+      filter: brightness(1) contrast(1); }
+    55% {
+      opacity: .33;
+      background-position: 45% 45%;
+      filter: brightness(1.2) contrast(1.25); } }
+  
+  @keyframes holoGradient {
+    0%, 100% {
+      opacity: 0.5;
+      background-position: 50% 50%;
+      filter: brightness(0.5) contrast(1); }
+    5%, 9% {
+      background-position: 100% 100%;
+      opacity: 1;
+      filter: brightness(0.75) contrast(1.25); }
+    13%, 17% {
+      background-position: 0% 0%;
+      opacity: .88; }
+    35%, 39% {
+      background-position: 100% 100%;
+      opacity: 1;
+      filter: brightness(0.5) contrast(1); }
+    55% {
+      background-position: 0% 0%;
+      opacity: 1;
+      filter: brightness(0.75) contrast(1.25); } }
+  
+  @keyframes holoCard {
+    0%, 100% {
+      transform: rotateZ(0deg) rotateX(0deg) rotateY(0deg); }
+    5%, 8% {
+      transform: rotateZ(0deg) rotateX(6deg) rotateY(-20deg); }
+    13%, 16% {
+      transform: rotateZ(0deg) rotateX(-9deg) rotateY(32deg); }
+    35%, 38% {
+      transform: rotateZ(3deg) rotateX(12deg) rotateY(20deg); }
+    55% {
+      transform: rotateZ(-3deg) rotateX(-12deg) rotateY(-27deg); } }
+  
+  .card:hover {
+    box-shadow: 0 0 30px -5px white, 0 0 10px -2px white, 0 25px 35px -20px rgba(0, 0, 0, 0.5); }
+  
+  .card:hover:before,
+  .card.active:before {
+    background-image: linear-gradient(115deg, transparent 20%, var(--color1) 36%, var(--color2) 43%, var(--color3) 50%, var(--color4) 57%, var(--color5) 64%, transparent 80%); }
+  
+  
+  .operator {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 6vh; }
+  
+  
+  .cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    perspective: 2000px;
+    position: relative;
+    z-index: 1;
+    transform: translate3d(0.1px, 0.1px, 0.1px); }
+  
+  
+  .cards .card:nth-child(2), .cards .card:nth-child(2):before, .cards .card:nth-child(2):after {
+    animation-delay: 0.25s; }
+  
+  .cards .card:nth-child(3), .cards .card:nth-child(3):before, .cards .card:nth-child(3):after {
+    animation-delay: 0.5s; }
+  
+  .cards .card:nth-child(4), .cards .card:nth-child(4):before, .cards .card:nth-child(4):after {
+    animation-delay: 0.75s; }
+
+    
+    </style>
+    <audio
+        controls
+        src="https://cdn.discordapp.com/attachments/442693927615594496/1126163480593055865/MuttiKeltisch.mp3">
+            Your browser does not support the
+        <code>audio</code> element.
+    </audio>
+<div id="back-arrow" class="back-arrow" onclick="page(-1)"></div>
+<div id="forward-arrow" class="forward-arrow" onclick="page(1)"></div>
+<main id="first" class="app" style="display: block;">
+    <div class="heading"><h1>Mutti's <br>Keltisches Kreuz</h1></div>
+    <div class="subheading"><h2>Die Übersicht</h2></div>
+    <div class="page">
+        <div class="left-page" style="padding-top: 375px;">
+            <section class="cards cross">
+                <div style="left: 210px; top: -60px;" class="card tower "></div>
+                <div style="left: 330px; top: 120px;" class="card twoOfWands "></div>
+                <div style="left: 65px; top: 120px;" class="card temperance "></div>
+                <div style="left: 210px; top: 300px;" class="card queenOfPent "></div>
+                <div style="left: 200px; top: 120px; transform: rotate(-45deg);" class="card eightOfWands "></div>
+                <div style="left: 200px; top: 120px; transform: rotate(45deg);" class="card pageOfCups "></div>
+                <div style="left: 550px; top: -120px;" class="card twoOfPent "></div>
+                <div style="left: 450px; top: 20px; transform: rotate(0deg);" class="card queenOfSwords "></div>
+                <div style="left: 550px; top: 170px; transform: rotate(0deg);" class="card wheelOfFortune "></div>
+                <div  style="left: 450px; top: 310px; transform: rotate(0deg);" class="card sixOfPent "></div>
+                <!-- <div style="transform: rotate(40deg);" class="card pika"></div> -->
+            </section>
+
+        </div>
+        <div class="right-page">
+            <h1>1. Das Herz deines Selbst (deine Grundenergie)</h1>
+            <section class="cards">
+                <div style="width: 280px; height: 500px;" class="card threeDCard eightOfWands "></div>
+            </section>
+            <div class="rightOfCard"><p>Der Tod sieht auf den ersten Blick etwas gruselig aus, ist es jedoch nicht. Der Tod symbolisiert die Erneuerung und das wichtige Ende eines Lebensabschnitts.</p></div>
+            <div class="bottomParagraph"><p>Oft symbolisiert diese Karte, dass du dich eventuell dagegen währst, da Veränderungen einem Angst machen. Deine Grundenergie zeigt sich in der Erkenntis, dass manchmal etwas enden muss damit etwas Neues wachsen kann.</p></div>
+        </div>
+    </div>
+    
+    <style class="hover"></style>
+    
+</main>
+<main id="second" class="app">
+    
+    <div class="page">
+        <div class="left-page-alt">
+            <h1>2. Eine Energie, die dich unterstützt</h1>
+            <section class="cards">
+                <div style="width: 280px; height: 500px;" class="card threeDCard pageOfCups "></div>
+            </section>
+            <div class="rightOfCard"><p>Der Mopsbube der Würste ist ein purer Geniesser. Er verdient sich seine Belohnungen und nimmt sich Zeit diese dann zu verschlingen. Nimm dir Zeit für das, was du genießt.</p></div>
+            <div class="bottomParagraph" style="line-height: 2.5rem; width: 570px;"><p>Eventuell bist du manchmal so fokussiert auf das Ziel, dass du vergisst die Reise wertzuschätzen. Die Energie, die dich hier unterstützt, zeigt sich in deiner Geduld, Freude an der Reise und stetigem Fortschritt.</p></div>
+        </div>
+        <div class="right-page">
+            <h1>3. Bewusste Gedanken</h1>
+            <section class="cards">
+                <div style="width: 280px; height: 500px;" class="card threeDCard tower "></div>
+            </section>
+            <div class="rightOfCard" style="line-height: 4rem; width: 260px;"><p>Du bist dir bewusst, dass du schon viel erreicht hast. Du kannst dir deine Erfolge vor Augen führen und hast es verdient, dich auf deinen Lorbeeren auszuruhen. </p></div>
+            <div class="bottomParagraph" style="line-height: 3rem; width: 570px;"><p>Jedoch lädt die 9 der Näpfe auch dazu ein, noch ein bisschen weiterzugehen. Du wirst wissen, wann es so weit ist, wieder aufzubrechen und nach neuen Abenteuern zu suchen, vertraue da deiner Intuition.</p></div>
+        </div>
+    </div>
+    
+    <style class="hover"></style>
+    
+</main>
+<main id="third" class="app">
+    
+    <div class="page">
+        <div class="left-page-alt">
+            <h1>4. Unterbewusste Gedanken</h1>
+            <section class="cards">
+                <div style="width: 280px; height: 500px;" class="card threeDCard queenOfPent "></div>
+            </section>
+            <div class="rightOfCard" style="top: 100px; right: 55px;"><p>Instinktiv verkörperst du eine selbstbewusste und kreative Kraft der Natur. Du unterstützt das Wachstum deiner Mitmenschen, sowohl deines Selbst. Es geht dir am besten, wenn alles um dich herum blüht und gedeiht. </p></div>
+            <div class="bottomParagraph" style="width: 590px; left: 60px; line-height: 1.5rem;"><p>Zusammen mit deiner Grundenergie des Todes, bist du dir bewusst, dass nicht nur die Natur blüht und verwelkt. Auch im Leben gibt es Jahreszeiten: Perioden, in denen wir besonders empfänglich sind und Perioden, in denen wir rasten müssen. Wenn du dich unsicher fühlst, höre in dich hinein und versuche deine aktuelle „Jahreszeit" zu erfühlen. Ist es Zeit zu blühen oder Zeit zu ruhen?</p></div>
+        </div>
+        <div class="right-page">
+            <h1>5. Etwas, das du loslassen kannst</h1>
+            <section class="cards">
+                <div style="width: 280px; height: 500px;" class="card threeDCard temperance "></div>
+            </section>
+            <div class="rightOfCard" style="line-height: 2rem; top: 100px;"><p>Der Mopsbube der Näpfe ist ein sehr feinfühliger Mops. Er zeigt sehr viele Emotionen und Empfindlichkeit für andere Menschen und Situationen. Vielleicht involvierst du dich manchmal ein bisschen zu viel in den emotionalen Angelegenheiten anderer.</p></div>
+            <div class="bottomParagraph" style="line-height: 2rem; width: 590px;"><p>Was nichts Negatives ist, jedoch im Zusammenhang mit deiner Herrscherin, kannst du manchmal die Zügel in die Hand nehmen, auch wenn das nicht gewünscht ist. Dieser Mops symbolisiert, dass deine passive Unterstützung genauso viel wert ist wie deine aktive.</p></div>
+        </div>
+    </div>
+    
+    <style class="hover"></style>
+    
+</main>
+<main id="fourth" class="app">
+    
+    <div class="page">
+        <div class="left-page-alt">
+            <h1>6. Etwas, auf das du dich einlassen kannst</h1>
+            <section class="cards">
+                <div style="width: 280px; height: 500px;" class="card threeDCard twoOfWands "></div>
+            </section>
+            <div class="rightOfCard" style="top: 140px;"><p>Die 2 der Knochen stehen für deine Intuition und Entscheidungskraft. Du kannst zwar die Zukunft nicht sehen, jedoch kannst du dich an die Vergangenheit erinnern und darauf basierende Entscheidungen treffen. </p></div>
+            <div class="bottomParagraph" style="width:590px; bottom: 90px; line-height: 2.65rem;"><p>Deine Lebenserfahrung und Weitsicht unterstützen dich in deinen Abenteuern. Verlasse dich gerne auf dein Bauchgefühl, um wichtige Entscheidungen zu fällen.</p></div>
+        </div>
+        <div class="right-page">
+            <h1>7. Eine Lektion, die gelernt wird</h1>
+            <section class="cards">
+                <div style="width: 280px; height: 500px;" class="card threeDCard sixOfPent "></div>
+            </section>
+            <div class="rightOfCard" style="line-height: 2.4rem; top: 130px; right: 45px;"><p>Manchmal muss man den Stier (oder das Würstchen) fest bei den Hörnern packen. Das Ass der Würste möchte dich lehren, dass, wenn sich dir eine Gelegenheit bietet, du sie auch gerne in Kauf nehmen kannst. </p></div>
+            <div class="bottomParagraph" style="line-height: 1.8rem; left: -20px; width: 585px;"><p>Der kleine Mops in dieser Karte muss, wie vielleicht du auch, eine wichtige Entscheidung treffen: Braucht er mehr Zeit in seinem Garten, um weiterzuwachsen? Oder ist er stark genug, um den Garten zu verlassen und das Abenteur in der Welt zu suchen? </p></div>
+        </div>
+    </div>
+    
+    <style class="hover"></style>
+    
+</main>
+<main id="fifth" class="app">
+    
+    <div class="page">
+        <div class="left-page-alt">
+            <h1>8. Der Weg, der dir vorgeschlagen wird</h1>
+            <section class="cards">
+                <div style="width: 280px; height: 500px;" class="card threeDCard wheelOfFortune "></div>
+            </section>
+            <div class="rightOfCard" style="line-height: 2rem; top: 130px;"><p>Du kannst alles schaffen, auf das du dich hart konzentrierst. Der Mopsmagier hat all seine Werkzeuge zusammengesammelt und ist bereit etwas Neues zu erschaffen. Er hat lange von Erneuerung geträumt und nun realisiert er seine Wünsche.</p></div>
+            <div class="bottomParagraph" style="line-height: 1.8rem; width: 570px;"><p>Wenn du Veränderung wirklich möchtest, musst du manchmal deine gesame Energie darauf fokussieren. Diese Veränderung mag nicht über Nacht passieren, jedoch ist es wichtig den Stein ins Rollen zu bringen. Vielleicht ist jetzt die Zeit für dich, einen ersten, wichtigen Schritt zur Veränderung zu wagen. </p></div>
+        </div>
+        <div class="right-page">
+            <h1>9. Ein liebgemeinter Rat</h1>
+            <section class="cards">
+                <div style="width: 280px; height: 500px;" class="card threeDCard queenOfSwords "></div>
+            </section>
+            <div class="rightOfCard" style="line-height: 2rem; top: 130px;"><p>Diese Mopskönigin ist sehr weitsichtig und objektiv. Manchmal hat sie jedoch Probleme, ihr Herz akkurat Anderen gegenüber auszuschütten. Sie reagiert impulsiv. Eventuell findest auch du es manchmal schwer, dich richtig auszudrücken. </p></div>
+            <div class="bottomParagraph" style="line-height: 1.8rem; width: 570px; left: -20px;"><p>Vielleicht gewinnt dein Kopf manchmal über dein Herz und die falschen Worte flutschen heraus. Die Mopskönigin der Knochen möchte dir den Rat der Weitsicht geben. Erst zu reflektieren, dann zu handeln, um Misskommunikation zu vermeiden. </p></div>
+        </div>
+    </div>
+    
+    <style class="hover"></style>
+    
+</main>
+<main id="sixth" class="app">
+    
+    <div class="page">
+        <div class="left-page-alt">
+            <h1 style="padding-left: 0; letter-spacing: 0.5px; font-size: 1.5rem;">10. Wie es für dich weitergehen kann, wenn du dir treu bleibst</h1>
+            <section class="cards">
+                <div style="width: 280px; height: 500px;" class="card threeDCard twoOfPent "></div>
+            </section>
+            <div class="rightOfCard" style="line-height: 2.4rem; right: 50px;"><p>Die 10 der Stöckchen ist eine Karte des Durchhaltens. Absolut, manchmal fühlt es sich an, als ob zu viel auf deinen Schultern lastet. Manchmal können diese Gefühle überwältigend sein. </p></div>
+            <div class="bottomParagraph" style="line-height: 1.8rem; left: 60px; width: 590px;"><p>Jedoch musst du dich daran erinnern, wie weit du schon gekommen bist und was du schon erreicht hast. Dein Weg hat viele Höhen und Tiefen, aber bis jetzt hast du es doch immer bis ans Ziel geschafft, und daran wird sich nichts ändern. Du bist eine starke Mopsherrscherin!</p></div>
+        </div>
+        <div class="right-page">
+            <div class="subheading" style="top: 40px; left: 130px;"><h1 style="text-align: center; padding-left: 0; padding-right: 40px; padding-top: 25px;">Zusammenfassung</h1></div>
+            <div class="bottomParagraph" style="font-size: 1.15rem; line-height: 1.75rem; width: 570px; left: -20px;"><p>Aktuell ist dein Lebensweg von Veränderungen geprägt, auch wenn es dir manchmal Angst macht. Diese Veränderungen sind jedoch bedeutsam und fundamental. Es ist wichtig, dass du dich nicht nur auf das Ziel fokussierst, sondern auch das Abenteuer und den Weg, auf dem du unterwegs bist, zu schätzen weißt. Manchmal brauchst du eine kleine Rast, das ist absolut okay, und während du dich ausruhst, könntest du dir all deine Erfolge in Erinnerung rufen. Dies motiviert dich bestimmt weiterzuwandern. Denn tief in deinem Innersten hast du eine starke und nährende Energie, sie hilft dir durchzuhalten und neue Kraft zu schöpfen. Diese Kraft kann dazu führen, dass du manchmal vielleicht etwas zu durchsetzungsfähig bist und die Kontrolle übernehmen möchtest. Es ist momentan wichtig, diese Energien ruhen zu lassen. Du kannst dich jedoch absolut auf deine Intuition verlassen. Dein Bauchgefühl wird dich stets in die richtige Richtung führen. Besonders, da es hier um Veränderungen geht. Du musst entscheiden, ob und wann es Zeit ist, aufzubrechen und weiter zu erkunden und Fortschritt zu machen. Dein Weg ist voll kreativer Energie und lädt dich ein, all deine Erfahrung zu nutzen, um deine Wünsche in die Tat umzusetzen. Als liebgemeinten Rat wird dir die Weitsicht mit auf den Weg gegeben. Zu planen und zu denken um impulsive Handlungen zu vermeiden. Am Ende ist der Weg das Ziel. Wenn du dir treu bleibst und dir bewusst wirst, wie ausdauernd und stark du bist, dann hast du eigentlich schon gewonnen. Veränderung kommt mit jedem neuen Jahr, jedem neuen Lebensabschnitt, und auch diesen wirst du gleichmäßig navigieren können.</p></div>
+        </div>
+    </div>
+    
+    <style class="hover"></style>
+    
+</main>
+
+<script>
+/*
+
+    using 
+      - an animated gif of sparkles.
+      - an animated gradient as a holo effect.
+      - color-dodge mix blend mode
+    
+  */
+  console.log('script included')
+  var x;
+  var $cards = $(".threeDCard");
+  var $style = $(".hover");
+  
+  $cards
+    .on("mousemove touchmove", function(e) { 
+      // normalise touch/mouse
+      var pos = [e.offsetX,e.offsetY];
+      e.preventDefault();
+      if ( e.type === "touchmove" ) {
+        pos = [ e.touches[0].clientX, e.touches[0].clientY ];
+      }
+      var $card = $(this);
+      // math for mouse position
+      var l = pos[0];
+      var t = pos[1];
+      var h = $card.height();
+      var w = $card.width();
+      var px = Math.abs(Math.floor(100 / w * l)-100);
+      var py = Math.abs(Math.floor(100 / h * t)-100);
+      var pa = (50-px)+(50-py);
+      // math for gradient / background positions
+      var lp = (50+(px - 50)/1.5);
+      var tp = (50+(py - 50)/1.5);
+      var px_spark = (50+(px - 50)/7);
+      var py_spark = (50+(py - 50)/7);
+      var p_opc = 20+(Math.abs(pa)*1.5);
+      var ty = ((tp - 50)/2) * -1;
+      var tx = ((lp - 50)/1.5) * .5;
+      // css to apply for active card
+      var grad_pos = `background-position: ${lp}% ${tp}%;`
+      var sprk_pos = `background-position: ${px_spark}% ${py_spark}%;`
+      var opc = `opacity: ${p_opc/100};`
+      var tf = `transform: rotateX(${ty}deg) rotateY(${tx}deg)`
+      // need to use a <style> tag for psuedo elements
+      var style = `
+        .card:hover:before { ${grad_pos} }  /* gradient */
+        .card:hover:after { ${sprk_pos} ${opc} }   /* sparkles */ 
+      `
+      // set / apply css class and style
+      $cards.removeClass("active");
+      $card.removeClass("animated");
+      $card.attr( "style", tf );
+      $style.html(style);
+      if ( e.type === "touchmove" ) {
+        return false; 
+      }
+      clearTimeout(x);
+    }).on("mouseout touchend touchcancel", function() {
+      // remove css, apply custom animation on end
+      var $card = $(this);
+      $style.html("");
+      $card.removeAttr("style");
+      // x = setTimeout(function() {
+      //   $card.addClass("animated");
+      // },2500);
+    });
+  
+    var pageNum = 0;
+    function page(num) {
+  
+      pageNum += num;
+      if(pageNum > 5) pageNum = 0;
+      else if(pageNum < 0) pageNum = 5;
+  
+      document.getElementById('first').style.display = "none"
+      document.getElementById('second').style.display = "none"
+      document.getElementById('third').style.display = "none"
+      document.getElementById('fourth').style.display = "none"
+      document.getElementById('fifth').style.display = "none"
+      document.getElementById('sixth').style.display = "none"
+  
+      if(pageNum == 0) document.getElementById('first').style.display = "block"
+      else if(pageNum == 1) document.getElementById('second').style.display = "block"
+      else if(pageNum == 2) document.getElementById('third').style.display = "block"
+      else if(pageNum == 3) document.getElementById('fourth').style.display = "block"
+      else if(pageNum == 4) document.getElementById('fifth').style.display = "block"
+      else if(pageNum == 5) document.getElementById('sixth').style.display = "block"
+  
+      if(pageNum == 0) {
+        document.getElementById('back-arrow').style.display = 'none'
+      } else {
+        document.getElementById('back-arrow').style.display = 'block'
+      }
+      if(pageNum == 5) {
+        document.getElementById('forward-arrow').style.display = 'none'
+      } else {
+        document.getElementById('forward-arrow').style.display = 'block'
+      }
+    }
+  
+    // const log = document.getElementById('log');
+  
+  document.addEventListener('keydown', logKey);
+  
+  function logKey(e) {
+    // log.textContent += ` ${e.code}`;
+    if(e.key == "ArrowRight") page(1)
+    else if(e.key == "ArrowLeft") page(-1)
+  }
+  </script>
+</body>
+</html>
